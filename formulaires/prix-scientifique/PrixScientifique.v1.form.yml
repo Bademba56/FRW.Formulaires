@@ -1,0 +1,352 @@
+
+config:  
+  revision:
+    # Indique si la validation du formulaire est exécutée dès que la page révision est accédée, évitant ainsi à l'utilisateur de cliquer sur le bouton 'Valider'. Utile lorsqu'aucune consigne particulière ne doit être affichée avant la validation.
+    validationAutomatique: true
+  soumission: 
+    texteBoutonSoumettre:
+      fr: Soumettre la demande
+  formulaireUnilingue: true
+  securite:
+    accesAnonyme: true
+form:
+  title:
+    fr: Prix du Québec Scientifiques - Candidature
+  sectionsGroup:
+  - sections:
+      - section:
+          fr: Type de candidature
+        id: typeCandidature
+          
+        components:
+            - type: radio
+              name: science
+              label:
+                fr: Quelle candidature souhaitez-vous soumettre ?
+              options:
+                option1:
+                  fr: Mise en candidature Prix scientifique (sauf Hubert-Reeves)
+                option2:
+                  fr: Mise en candidature Prix Hubert-Reeves
+
+            - type: listeDeroulante
+              name: listeCandiature
+              
+              label:
+                fr: Mise en candidature pour le prix
+              help:
+                fr: Sélectionnez le prix scientifique pour lesquel vous soumettez une candidature
+              v-if: val('science') === 'option1'
+              options:
+                prixArmandFrappier: 
+                  fr: Prix Armand-Frappier
+                prixLeonGerin: 
+                  fr: Pix Léon-Gérin 
+                prixLionelBoulet:
+                  fr: Prix Lionel-Boulet
+                prixLiseWatier:
+                  fr: Prix Lise Watier
+                prixMarieAdreeBertrand:
+                  fr: Prix Marie-Andrée-Bertrand
+                prixMarieVictorin:
+                  fr: Prix Marie-Victorin
+                prixWilderPenfield:
+                  fr: Prix Wilder-Penfield
+                
+            - type: group 
+              name: personneCadidate
+              label: 
+                fr: Personne candidate              
+            
+              components:
+              - type: radio
+                name: sexe                
+                options:
+                  option1: M
+                  option2: Mme
+
+              - type: text
+                name: prenom                
+                label:
+                  fr: Prénom
+
+              - type: text
+                name: nom
+                label:
+                  fr: Nom
+
+              - type: text
+                name: titre
+                label: 
+                  fr: Titre
+              
+              - type: text
+                name: domaineEtudes
+                label: 
+                  fr: Domaine d'études
+
+              - type: text
+                name: specialite
+                label: 
+                  fr: Spécialité
+
+              
+            - type: group 
+              name: coodoronneePersonneCadidate
+              label: 
+                fr: Coordonnées de la personne candidate  
+              components:
+                - type: text
+                  name: centredeRecherce                
+                  label:
+                    fr: Centre de recherche ou entreprise
+
+                - type: adresse
+                  name: adressCadidat                
+                  label:
+                    fr: Adresse personnelle
+
+                - type: adress
+                  name: adressCentreRechercheEntreprise                
+                  label:
+                    fr: Adresse
+                  help:
+                    fr: Université, département, faculté, pavillon
+
+                - type: text
+                  name: municipalite                
+                  label:
+                    fr: Municipalité
+
+                - type: tel
+                  name: telephonePersonneCadidate
+                  label:
+                   fr: Téléphone
+
+                - type: email
+                  name: courrielPersonneCandidate
+                  label: 
+                    fr: Adresse courriel
+
+      - section:
+         fr: Coordonnées de la personne qui propose la candidature
+        id: coordoneePersonneProposant          
+        components:
+          - type: group 
+            name: personneAutoriseeMandataire
+            label: 
+              fr: Personne qui propose la candidature
+            components:
+              
+              - type: radio
+                name: sexe                
+                options:
+                  option1: M
+                  option2: Mme
+
+              - type: text
+                name: prenom                
+                label:
+                  fr: Prénom
+
+              - type: text
+                name: nom
+                label:
+                  fr: Nom
+
+              - type: text
+                name: titre
+                label: 
+                  fr: Titre
+
+              - type: text
+                name: centreRecherchePersonnePropose
+                label: 
+                  fr: Centre de recherche ou entreprise
+
+              - type: adresse
+                name: adressePersonnePropose
+                label: 
+                  fr: adresse
+
+              - type: text
+                name: adressCentreEntrepriseProposant              
+                label:
+                  fr: Adresse
+                help:
+                  fr: Université, département, faculté, pavillon
+
+              - type: text
+                name: municipaliteProposant              
+                label:
+                  fr: Municipalité
+                help:
+                  fr: Municipalité, Province, Code postal
+
+              - type: tel
+                name: telephoneProposant
+                label:
+                  fr: Téléphone
+
+              - type: email
+                name: courrielProposant
+                label: 
+                  fr: Adresse courriel
+
+
+          
+      - section:
+          fr: À propos des Prix du Québec
+        id: identification
+          
+        components:
+          - type: group 
+            name: aproposPrix
+            label: 
+              fr: Où avez-vous Prix connaissance de l'appel de candidatures des Prix du Québec?
+           
+            components:
+              
+              - type: checkbox
+                name: sourceRenseignement
+                label:
+                  fr: Cochez toutes les réponses pertinentes.                
+                options:
+                  mediasSociaux: 
+                    fr: Médias sociaux
+                  informationTransmiseConnaissance: 
+                    fr: Information transmise par une connaissance
+                  infolettreTransmiseParMinistere:
+                    fr: Infolettre transmise par le Ministère
+                  sourceuniversite:
+                    fr: Information transmise par une univérsité
+                  autre:
+                    fr: Autre (spécifiez)
+                  radioTelevisionMediaNumeriqueOuTraditionnel:
+                    fr: Radio, télévision, média numérique ou tradionnel (spécifiez lequel)
+                  siteWeb:
+                    fr: Site Web (spécifiez lequel)
+                  publicite:
+                    fr: Publicite (spécifiez lequele)
+
+      
+        
+      - section:
+         fr: Documents à fournir
+        id: documents
+          
+        components:
+        - type: information
+          name: infodocuments
+          label:
+            fr: Veuillez confirmez que tous les documents suivants sont bien joints à votre demande.
+
+        - type: checkbox
+          name: checkbox1
+          label:
+            fr: Documents obligatoires
+          options:
+            op1:
+              fr: Lettre de présentation faisant valoir la contribution de la personne candidate
+            op2:
+              fr: Curriculum vitoe détaillé de la personne candidate
+            op3:
+              fr: Lettre d'appui (maximum troi) témoignant des aspects significatifs de la carrière de la personne candidate
+            op4:
+              fr: Document (s) relatif (s) à l'autorisation du dépôt d'une candidature, signée par la personne candidate permettant la transmission de son dossier aux membre du jury auquel il sera soumis
+
+        - name: FichiersAAjouter
+          type: customfile
+          label:
+            fr: Ajouter les documents
+
+        
+      - section:
+         fr: Autorisation du dépôt d'une cadidature
+        id: autorisationCadidature
+          
+        components:
+          - type: group 
+            name: autorisationCatdidat
+            label: 
+              fr: Autorisation
+            components:
+              
+              - type: text
+                name: soussigne                
+                label:
+                  fr: Je soussigné ou soussignée
+                placeholder:
+                  fr: Nom de la personne candidate
+
+              - type: text
+                name: nomPrix                
+                label:
+                  fr: Autorise le dépôt de ma candidature au prix
+                placeholder:
+                  fr: Nom du prix
+              
+              - type: checkbox
+                name: declarationsCandidat                
+                label:
+                  fr: "Je déclare également :"
+                options:
+                  citoyennente:
+                    fr: Être de citoyenneté canadienne, avoir demeuré au Québec et y avoir fait carrière.
+                  pasCondamne:
+                    fr: "Ne jamais avoir été reconnu(e) coupable d'une infraction criminelle"
+                validations:
+                   required: 'true'
+                   min: 2
+                    
+              - type: date
+                name: dateSignature               
+                label:
+                  fr: "Date de soumission"
+
+              - type: text
+                name: municipalitCadidat              
+                label:
+                  fr: Municipalité
+              
+              - type: signature
+                name: signatureCandidat              
+                label:
+                  fr: Signature de la personne candidate
+      - section: 
+          fr: Révision
+          en: Revision
+        id: revision
+        cacherTexteExplicatifChampsObligatoires: true                    
+        components:
+        - type: dynamic
+          tag: div
+          v-if: val('EtatRevision') === 'initial'
+          classes: texte-revision
+          text: 
+            fr: Si vous n'avez pas peur, cliquez sur le bouton « Valider » afin de vérifier que le formulaire est rempli correctement.
+            en: (en)Si vous n'avez pas peur, cliquez sur le bouton « Valider » afin de vérifier que le formulaire est rempli correctement.
+        - type: dynamic
+          tag: div
+          v-if: val('EtatRevision') === 'sans-erreur'
+          classes: texte-revision
+          text: 
+            fr: Tout est beau! Vous pouvez soumettre votre formulaire!
+            en: (en)Tout est beau! Vous pouvez soumettre votre formulaire!  
+     
+     
+                
+              
+
+      
+
+     
+
+          
+          
+
+
+          
+                
+
+            
