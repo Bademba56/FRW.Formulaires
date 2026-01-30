@@ -1,0 +1,158 @@
+form:
+  title:
+    fr: Demande d'autorisation d'émission
+
+  sectionsGroup:
+  - sections:
+      - section:
+          fr: Identification de la coopérative
+        id: identification
+          
+        components:
+            - name: nomCooperative
+              type: text
+              label:
+                fr: Nom de la cooperative
+
+            - type: text
+              name: numeroDossier
+              label:
+                fr: Numéro de dossier
+
+            - type: adresse
+              name: adresses
+              label:
+                fr: Adresse
+
+            - type: tel
+              name: telephone
+              label:
+                fr: Numéro de téléphone
+
+            - type: email
+              name: courriel
+              label: 
+                fr: Adresse courriel
+              validations:
+                email: 
+                optional: null
+
+            - type: text
+              name: nomEtTitre
+              label:
+                fr: Nom en majuscule et titre
+
+            - type: text
+              name: signature
+              label:
+                fr: Signature de la personne autorisée (Votre nom au complet)
+
+            - type: radio
+              name: aUnMandataire
+              label:
+                fr: La demande est-elle remplie par un mandataire ?
+              options:  yesno
+
+            - type: text
+              name: nomFederation
+              v-if: val('aUnMandataire') === 'true'
+              label:
+                fr: Nom du mandaire
+
+            - type: adresse
+              name: adresseMandataire
+              v-if: val('aUnMandataire') === 'true'
+              label:
+                fr: adresse
+
+            - type: tel
+              name: telephoneMandataire
+              v-if: val('aUnMandataire') === 'true'
+              label:
+                fr: Téléphone
+
+            - type: email
+              name: courrielMandataire
+              v-if: val('aUnMandataire') === 'true'
+              label: 
+                fr: Adresse courriel
+              validations:
+                email: 
+                optional: null
+
+            - type: text
+              name: nomTitreMandataire
+              v-if: val('aUnMandataire') === 'true'
+              label:
+                fr: Nom en majuscule et titre
+            
+
+      - section:
+         fr: Documents à fournir
+        id: documents
+          
+        components:
+        - type: information
+          name: infodocuments
+          label:
+            fr: Veuillez confirmez que tous les documents suivants sont bien joints à votre demande.
+
+        - type: checkbox
+          name: checkbox1
+          label:
+            fr: Documents obligatoires
+          options:
+            op1:
+              fr: Extrait du reglement autorisant l'émission des parts
+            op2:
+              fr: Résolution du conseil  d'administration
+            op3:
+              fr: Attestation signée par deux administrateurs
+            op4:
+              fr: Rapport annuel de la coopérative
+            op6:
+              fr: Certificat de l'auditeur - Taux de capitalisation < 60%
+
+        - name: FichiersAAjouter
+          type: customfile
+          label:
+            fr: Ajouter les documents
+
+        - type: checkbox
+          name: docsOptionnels
+          label:
+            fr: Documents optionnels (selon votre situation)
+          options:
+            op7:
+              fr: Demande de dispense - Taux de capitalisation
+          validations: 
+                optional: null
+
+        - name: FichiersAAjouter
+          type: customfile
+          label:
+            fr: Ajouter les documents  
+          validations: 
+            optional: null
+        
+
+      - section: 
+          fr: Révision
+          en: Revision
+        id: revision
+        cacherTexteExplicatifChampsObligatoires: true                    
+        components:
+        - type: dynamic
+          tag: div
+          v-if: val('EtatRevision') === 'initial'
+          classes: texte-revision
+          text: 
+            fr: Si vous n'avez pas peur, cliquez sur le bouton « Valider » afin de vérifier que le formulaire est rempli correctement.
+            en: (en)Si vous n'avez pas peur, cliquez sur le bouton « Valider » afin de vérifier que le formulaire est rempli correctement.
+        - type: dynamic
+          tag: div
+          v-if: val('EtatRevision') === 'sans-erreur'
+          classes: texte-revision
+          text: 
+            fr: Tout est beau! Vous pouvez soumettre votre formulaire!
+            en: (en)Tout est beau! Vous pouvez soumettre votre formulaire!
