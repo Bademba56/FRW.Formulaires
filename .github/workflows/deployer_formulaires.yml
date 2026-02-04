@@ -20,7 +20,7 @@ jobs:
       uses: MTESSDev/github-action-mtess-frw-deploiement@main
       with:
         environnement: QA
-        repertoire: '${{ github.workspace }}'
+        repertoire: '${{ github.workspace }}/formulaires'
         noPublicSystemeAutorise: ${{ secrets.NOPUBLICSYSTEMEAUTORISE }}
         apiKey: ${{ secrets.APIKEY }}
         
