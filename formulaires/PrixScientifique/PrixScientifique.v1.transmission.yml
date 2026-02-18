@@ -1,0 +1,27 @@
+etapes:
+- tache: genererWord
+  options:
+    fichierBind: PrixScientifique.bind.yml
+- tache: ajouterEstampille
+- tache: traiterDocumentsSoumis
+- tache: envoyerCourriel
+  options:
+    gabarit: confirmation
+gabaritsCourriels:
+  -id: confirmation
+  a:
+    tous:
+      - "analyse_affaires_daia@economie.gouv.qc.ca"
+  nomExpediteur: "FRW Prix scientifique"
+  objet: "Nouvelle soumission Prix scientifique"
+  corps: |
+    <p>Bonjour,</p>
+    <p>Une nouvelle soumission a été reçue pour le Prix scientifique</p>
+    <p>Numéro de référence : {{NoConfirmation}}</p>
+    <p>Date de transmission : {{FormatterDate DateTransmission "yyyy-MM-dd HH:mm:ss"}}</p>
+    <p>Voire les pièces jointes</p>
+    ul>
+          {{#listePJ}}
+        <li><a href="{{url}}">{{nomOriginal}}</a></li>
+          {{/listePJ}}
+        </ul>
