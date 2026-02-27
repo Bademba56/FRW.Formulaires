@@ -20,7 +20,7 @@ gabaritsCourriels:
     <p>Numéro de référence : {{NoConfirmation}}</p>
     <p>Date de transmission : {{FormatterDate DateTransmission "yyyy-MM-dd HH:mm:ss"}}</p>
     <p>Voire les pièces jointes</p>
-    ul>
+    <ul>
           {{#listePJ}}
         <li><a href="{{url}}">{{nomOriginal}}</a></li>
           {{/listePJ}}
