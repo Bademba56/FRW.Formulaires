@@ -12,9 +12,9 @@ gabaritsCourriels:
    a:
    tous:
       - "analyse_affaires_daia@economie.gouv.qc.ca"
-  nomExpediteur: "FRW Prix scientifique"
-  objet: "Nouvelle soumission Prix scientifique"
-  corps: |
+   nomExpediteur: "FRW Prix scientifique"
+   objet: "Nouvelle soumission Prix scientifique"
+   corps: |
     <p>Bonjour,</p>
     <p>Une nouvelle soumission a été reçue pour le Prix scientifique</p>
     <p>Numéro de référence : {{NoConfirmation}}</p>
