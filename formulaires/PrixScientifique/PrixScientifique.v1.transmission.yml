@@ -18,7 +18,6 @@ gabaritsCourriels:
     <p>Bonjour,</p>
     <p>Une nouvelle soumission a été reçue pour le Prix scientifique</p>
     <p>Numéro de référence : {{NoConfirmation}}</p>
-    <p>Date de transmission : {{FormatterDate DateTransmission "yyyy-MM-dd HH:mm:ss"}}</p>
     <p>Voire les pièces jointes</p>
     <ul>
           {{#listePJ}}

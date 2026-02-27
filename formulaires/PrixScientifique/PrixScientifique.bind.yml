@@ -14,8 +14,8 @@ bundles:
 templates:
 - id: template1
   name: Fichier gabarit
-  gabarit: 
-    fr: Gabarits/PrixScientifique.gabarit.FR.docx
-    en: Gabarits/PrixScientifique.gabarit.EN.docx
+ # gabarit: 
+  #  fr: Gabarits/PrixScientifique.gabarit.FR.docx
+  #  en: Gabarits/PrixScientifique.gabarit.EN.docx
 
 
