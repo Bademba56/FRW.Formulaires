@@ -231,15 +231,15 @@ form:
 
       
         
-      # - section:
-      #    fr: Documents à fournir
-      #   id: documents
+      - section:
+          fr: Documents à fournir
+          id: documents
           
-      #   components:
-      #   - type: information
-      #     name: infodocuments
-      #     label:
-      #       fr: Veuillez confirmez que tous les documents suivants sont bien joints à votre demande.
+          components:
+          - type: information
+            name: infodocuments
+            label:
+              fr: Veuillez confirmez que tous les documents suivants sont bien joints à votre demande.
 
       #   - type: checkbox
       #     name: checkbox1
@@ -255,10 +255,10 @@ form:
       #       op4:
       #         fr: Document (s) relatif (s) à l'autorisation du dépôt d'une candidature, signée par la personne candidate permettant la transmission de son dossier aux membre du jury auquel il sera soumis
 
-      #   - name: FichiersAAjouter
-      #     type: customfile
-      #     label:
-      #       fr: Ajouter les documents
+          - name: FichiersAAjouter
+            type: customfile
+            label:
+              fr: Ajouter les documents
 
         
       - section:
