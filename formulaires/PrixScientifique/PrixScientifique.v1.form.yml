@@ -241,15 +241,15 @@ form:
             label:
               fr: Veuillez confirmez que tous les documents suivants sont bien joints à votre demande.
 
-      #   - type: checkbox
-      #     name: checkbox1
-      #     label:
-      #       fr: Documents obligatoires
-      #     options:
-      #       op1:
-      #         fr: Lettre de présentation faisant valoir la contribution de la personne candidate
-      #       op2:
-      #         fr: Curriculum vitoe détaillé de la personne candidate
+          - type: checkbox
+            name: checkbox1
+            label:
+              fr: Documents obligatoires
+            options:
+              op1:
+                fr: Lettre de présentation faisant valoir la contribution de la personne candidate
+              op2:
+                fr: Curriculum vitoe détaillé de la personne candidate
       #       op3:
       #         fr: Lettre d'appui (maximum troi) témoignant des aspects significatifs de la carrière de la personne candidate
       #       op4:
