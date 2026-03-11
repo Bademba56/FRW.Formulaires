@@ -234,7 +234,6 @@ form:
       - section:
           fr: Documents à fournir
           id: documents
-          
           components:
           - type: information
             name: infodocuments
@@ -255,8 +254,8 @@ form:
               op4:
                 fr: Document (s) relatif (s) à l'autorisation du dépôt d'une candidature, signée par la personne candidate permettant la transmission de son dossier aux membre du jury auquel il sera soumis
 
-          - name: FichiersAAjouter
-            type: customfile
+          - type: customfile
+            name: FichiersAAjouter
             label:
               fr: Ajouter les documents
 
